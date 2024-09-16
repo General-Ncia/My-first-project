@@ -1,0 +1,55 @@
+/* Navigation styling */
+.responsive-nav {
+    background-color: #000;
+    padding: 30px;
+    display: flex;
+    justify-content: flex-end; /* Align menu items to the right on large screens */
+    align-items: center;
+    position: relative; /* Ensure positioning for toggle button */
+    }
+    .menu-toggle {
+    display: none; /* Hidden by default on large screens */
+    font-size: 24px;
+    cursor: pointer;
+    color: whitesmoke;
+    position: fixed; /* Fix position to the top right corner */
+    top: 20px; /* Distance from the top of the viewport */
+    right: 20px; /* Distance from the right of the viewport */
+    z-index: 1000; /* Ensure it stays above other content */
+    }
+    #menu {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    margin: 0;
+    }
+    #menu li {
+    margin-right: 20px;
+    }
+    #menu a {
+    color: lightblue;
+    text-decoration: none;
+    padding: 10px;
+    }
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+    .menu-toggle {
+    display: block; /* Show toggle on small screens */
+    }
+    #menu {
+    display: none; /* Hide menu on small screens */
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center; /* Center the nav items when displayed */
+    width: 100%; /* Take full width */
+    margin-top: 40px; /* Add some spacing from the toggle button */
+    }
+    #menu.show {
+    display: flex; /* Show menu when toggle is clicked */
+    }
+    }
+    Javascript
+    // Initialize variables
+    const menu = document.getElementById("menu");
+    const toggleButton = document.querySelector(".menu-toggle")
